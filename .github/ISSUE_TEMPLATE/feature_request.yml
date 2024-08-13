@@ -1,0 +1,30 @@
+name: "🚀 Feature Request"
+description: "Suggest a new feature for SwiftStyle AI!"
+labels: ["feature request", "enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### Thanks for helping us improve SwiftStyle AI!  
+        Your input is invaluable in making our product better for everyone.
+
+  - type: textarea
+    attributes:
+      label: "What problem are you trying to solve?"
+      description: "Please describe the issue or limitation you're experiencing. The more details, the better!"
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: "Your proposed solution"
+      description: "If you have any ideas on how to solve this problem, share them here. Feel free to get creative!"
+    validations:
+      required: false
+
+  - type: textarea
+    attributes:
+      label: "Additional context"
+      description: "Any other information or context that would be helpful for us to understand the request."
+    validations:
+      required: false

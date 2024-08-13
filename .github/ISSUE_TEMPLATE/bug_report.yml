@@ -1,0 +1,49 @@
+name: "🐛 Bug Report"
+description: "Report an issue with SwiftStyle AI that isn't working as expected."
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### Thanks for taking the time to file a bug report!
+        Please fill out this form as completely as possible to help us resolve the issue quickly.
+
+  - type: textarea
+    attributes:
+      label: "Current Behavior"
+      description: "What is SwiftStyle AI doing currently? Describe the unexpected behavior you are experiencing."
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: "Expected Behavior"
+      description: "What did you expect SwiftStyle AI to do? Describe the behavior you were anticipating."
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: "Steps to Reproduce"
+      description: "List the steps to reproduce the issue. Providing a step-by-step guide will help us identify the problem faster."
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: "Environment & Operating System"
+      description: |
+        What operating system and environment are you using? Please include versions and any other relevant details.
+      placeholder: |
+        Example: 
+        - OS: macOS Catalina 10.15.7
+        - Browser: Chrome 92.0.4515.131
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: "Additional Context"
+      description: "Any other information that might be helpful, such as error messages, screenshots, or logs."
+    validations:
+      required: false
