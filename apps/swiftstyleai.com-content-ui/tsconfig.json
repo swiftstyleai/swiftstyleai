@@ -1,0 +1,14 @@
+{
+  "extends": "@llm-101/tsconfig/base",
+  "compilerOptions": {
+    "module": "es2022",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "jsx": "react-jsx",
+    "types": ["chrome"]
+  },
+  "include": ["src"],
+  "exclude": ["src/**/*.spec.ts"]
+}
