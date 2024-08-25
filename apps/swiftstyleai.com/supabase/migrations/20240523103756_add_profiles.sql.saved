@@ -1,0 +1,65 @@
+--------------- PROFILES ---------------
+-- TABLE --
+CREATE TABLE IF NOT EXISTS profiles (
+  -- ID
+  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  -- RELATIONSHIPS
+  user_id UUID NOT NULL UNIQUE REFERENCES auth.users(id) ON DELETE CASCADE,
+  -- METADATA
+  created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMPTZ,
+  -- REQUIRED
+  bio TEXT NOT NULL CHECK (char_length(bio) <= 500),
+  has_onboarded BOOLEAN NOT NULL DEFAULT FALSE,
+  display_name TEXT NOT NULL CHECK (char_length(display_name) <= 100)
+  -- OPTIONAL
+);
+
+-- INDEXES --
+CREATE INDEX idx_profiles_user_id ON profiles (user_id);
+
+-- RLS --
+ALTER TABLE
+  profiles ENABLE ROW LEVEL SECURITY;
+
+CREATE POLICY "Allow full access to own profiles" ON profiles USING (user_id = auth.uid()) WITH CHECK (user_id = auth.uid());
+
+-- FUNCTIONS --
+
+-- TRIGGERS --
+CREATE TRIGGER update_profiles_updated_at BEFORE
+UPDATE
+  ON profiles FOR EACH ROW EXECUTE PROCEDURE update_updated_at_column();
+
+CREATE OR REPLACE FUNCTION create_profile_and_workspace() 
+RETURNS TRIGGER
+security definer set search_path = public
+AS $$
+BEGIN
+  -- Create a profile for the new user
+  INSERT INTO public.profiles(user_id, bio, has_onboarded, display_name)
+  VALUES(
+    NEW.id,
+    '',
+    FALSE,
+    new.raw_user_meta_data ->> 'display_name'
+  );
+
+  -- Create the home workspace for the new user
+  INSERT INTO public.workspaces(user_id, is_home, name, description)
+  VALUES(
+    NEW.id,
+    TRUE,
+    'Home',
+    'My home workspace.'
+  );
+  RETURN NEW;
+END;
+$$ language 'plpgsql';
+
+CREATE TRIGGER create_profile_and_workspace_trigger
+AFTER INSERT ON auth.users
+FOR EACH ROW
+EXECUTE PROCEDURE public.create_profile_and_workspace();
+
+-- STORAGE --

@@ -1,0 +1,344 @@
+/* https://www.radix-ui.com/themes/docs/overview/styling */
+/* https://github.com/radix-ui/themes/issues/109#issuecomment-1747345743 */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%; /* White background */
+    --foreground: 240 10% 3.9%; /* Dark text */
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --primary: 92 48% 42%; /* Darkened lime color */
+    --primary-foreground: 0 0% 100%; /* White text for contrast */
+
+    --secondary: 240 4.8% 95.9%; /* Light gray */
+    --secondary-foreground: 240 5.9% 10%; /* Dark gray text */
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+
+    --destructive: 0 84.2% 60.2%; /* Red for destructive actions */
+    --destructive-foreground: 0 0% 98%; /* Light text for contrast */
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 92 48% 42%; /* Darkened lime color for focus rings */
+
+    --radius: 0.5rem;
+    --chart-1: 12 76% 61%; /* Red-orange for charts */
+    --chart-2: 173 58% 39%; /* Teal for charts */
+    --chart-3: 197 37% 24%; /* Dark teal for charts */
+    --chart-4: 43 74% 66%; /* Yellow-green for charts */
+    --chart-5: 27 87% 67%; /* Orange for charts */
+  }
+
+  .dark {
+    --background: 20 14.3% 4.1%; /* Very dark gray background */
+    --foreground: 0 0% 95%; /* Near white text */
+    --card: 24 9.8% 10%;
+    --card-foreground: 0 0% 95%;
+    --popover: 0 0% 9%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 83 78% 55%; /* Darker, more muted lime color */
+    --primary-foreground: 0 0% 0%; /* Black text for contrast */
+
+    --secondary: 240 3.7% 15.9%; /* Darker secondary color */
+    --secondary-foreground: 0 0% 98%; /* Light text */
+
+    --muted: 0 0% 15%; /* Muted gray */
+    --muted-foreground: 240 5% 64.9%; /* Soft light blue-gray text */
+
+    --accent: 12 6.5% 15.1%; /* Soft red for accents */
+    --accent-foreground: 0 0% 98%; /* Light text for accents */
+
+    --destructive: 0 62.8% 30.6%; /* Darker red for destructive actions */
+    --destructive-foreground: 0 85.7% 97.3%; /* Light text */
+
+    --border: 240 3.7% 15.9%; /* Dark gray borders */
+    --input: 240 3.7% 15.9%; /* Dark gray inputs */
+    --ring: 83 78% 55%; /* Darker lime color for focus rings */
+
+    --chart-1: 220 70% 50%; /* Blue for charts */
+    --chart-2: 160 60% 45%; /* Green for charts */
+    --chart-3: 30 80% 55%; /* Orange for charts */
+    --chart-4: 280 65% 60%; /* Purple for charts */
+    --chart-5: 340 75% 55%; /* Pink for charts */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+:root {
+  /* #region  /**=========== Primary Color =========== */
+  /* !STARTERCONF Customize these variable, copy and paste from /styles/colors.css for list of colors */
+  --tw-color-primary-50: 240 249 255;
+  --tw-color-primary-100: 224 242 254;
+  --tw-color-primary-200: 186 230 253;
+  --tw-color-primary-300: 125 211 252;
+  --tw-color-primary-400: 56 189 248;
+  --tw-color-primary-500: 14 165 233;
+  --tw-color-primary-600: 2 132 199;
+  --tw-color-primary-700: 3 105 161;
+  --tw-color-primary-800: 7 89 133;
+  --tw-color-primary-900: 12 74 110;
+  --color-primary-50: rgb(var(--tw-color-primary-50)); /* #f0f9ff */
+  --color-primary-100: rgb(var(--tw-color-primary-100)); /* #e0f2fe */
+  --color-primary-200: rgb(var(--tw-color-primary-200)); /* #bae6fd */
+  --color-primary-300: rgb(var(--tw-color-primary-300)); /* #7dd3fc */
+  --color-primary-400: rgb(var(--tw-color-primary-400)); /* #38bdf8 */
+  --color-primary-500: rgb(var(--tw-color-primary-500)); /* #0ea5e9 */
+  --color-primary-600: rgb(var(--tw-color-primary-600)); /* #0284c7 */
+  --color-primary-700: rgb(var(--tw-color-primary-700)); /* #0369a1 */
+  --color-primary-800: rgb(var(--tw-color-primary-800)); /* #075985 */
+  --color-primary-900: rgb(var(--tw-color-primary-900)); /* #0c4a6e */
+  /* #endregion  /**======== Primary Color =========== */
+}
+
+@layer base {
+  /* inter var - latin */
+  @font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: block;
+    src: url('/fonts/inter-var-latin.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+      U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212,
+      U+2215, U+FEFF, U+FFFD;
+  }
+
+  .cursor-newtab {
+    cursor: url('/images/new-tab.png') 10 10, pointer;
+  }
+
+  /* #region  /**=========== Typography =========== */
+  .h0 {
+    @apply font-primary text-3xl font-bold md:text-5xl;
+  }
+
+  h1,
+  .h1 {
+    @apply font-primary text-2xl font-bold md:text-4xl;
+  }
+
+  h2,
+  .h2 {
+    @apply font-primary text-xl font-bold md:text-3xl;
+  }
+
+  h3,
+  .h3 {
+    @apply font-primary text-lg font-bold md:text-2xl;
+  }
+
+  h4,
+  .h4 {
+    @apply font-primary text-base font-bold md:text-lg;
+  }
+
+  body,
+  .p {
+    @apply font-primary text-sm md:text-base;
+  }
+  /* #endregion  /**======== Typography =========== */
+
+  .layout {
+    /* 1100px */
+    max-width: 68.75rem;
+    @apply mx-auto w-11/12;
+  }
+
+  .bg-dark a.custom-link {
+    @apply border-gray-200 hover:border-gray-200/0;
+  }
+
+  /* Class to adjust with sticky footer */
+  .min-h-main {
+    @apply min-h-[calc(100vh-56px)];
+  }
+}
+
+@layer utilities {
+  .animated-underline {
+    background-image: linear-gradient(#33333300, #33333300),
+      linear-gradient(
+        to right,
+        var(--color-primary-400),
+        var(--color-primary-500)
+      );
+    background-size: 100% 2px, 0 2px;
+    background-position: 100% 100%, 0 100%;
+    background-repeat: no-repeat;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .animated-underline {
+      transition: 0.3s ease;
+      transition-property: background-size, color, background-color,
+        border-color;
+    }
+  }
+  .animated-underline:hover,
+  .animated-underline:focus-visible {
+    background-size: 0 2px, 100% 2px;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.ng-tns-c31-0 {
+  @apply w-full;
+}
+
+.page-content-height {
+  @apply h-screen h-[calc(var(--vh,1vh)*_100)];
+}
+
+.page-content {
+  /* sm:gap-4 sm:py-4 */
+  @apply flex flex-col min-h-[calc(100vh_-_64px)] overflow-y-auto gap-4 py-4;
+  -webkit-overflow-scrolling: touch;
+}
+
+.clearfix::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+@keyframes spin_animate {
+  0.00% {
+    animation-timing-function: cubic-bezier(0.51, 0.03, 0.89, 0.56);
+    transform: translate(0px, 0px) rotate(0deg) scale(1, 1) skew(0deg, 0deg);
+    opacity: 1;
+  }
+
+  52.00% {
+    animation-timing-function: cubic-bezier(0.17, 0.39, 0.55, 0.91);
+    transform: translate(0px, 0px) rotate(211.13deg);
+  }
+
+  100.00% {
+    animation-timing-function: cubic-bezier(0.17, 0.39, 0.55, 0.91);
+    transform: translate(0px, 0px) rotate(360deg);
+  }
+}
+
+@keyframes breath_animate {
+  0.00% {
+    transform: translate(0px, 0px) rotate(0deg) scale(0.91, 0.91)
+      skew(0deg, 0deg);
+    opacity: 1;
+  }
+
+  4.00% {
+    transform: translate(0px, 0px) rotate(0deg) scale(0.91, 0.91);
+  }
+
+  8.00% {
+    animation-timing-function: cubic-bezier(0.69, 0.6, 0.35, 0.27);
+    transform: translate(0px, 0px) rotate(0deg) scale(0.91, 0.91);
+  }
+
+  14.00% {
+    transform: translate(0px, 0px) rotate(0deg) scale(0.93, 0.93);
+  }
+
+  18.00% {
+    transform: translate(0px, 0px) rotate(0deg) scale(0.94, 0.94);
+  }
+
+  22.00% {
+    animation-timing-function: cubic-bezier(0.67, 0.66, 0.34, 0.33);
+    transform: translate(0px, 0px) rotate(0deg) scale(0.96, 0.96);
+  }
+
+  26.00% {
+    transform: translate(0px, 0px) rotate(0deg) scale(0.97, 0.97);
+  }
+
+  30.00% {
+    transform: translate(0px, 0px) rotate(0deg) scale(0.99, 0.99);
+  }
+
+  34.00% {
+    animation-timing-function: cubic-bezier(0.65, 0.71, 0.32, 0.38);
+    transform: translate(0px, 0px) rotate(0deg) scale(1.01, 1.01);
+  }
+
+  40.00% {
+    animation-timing-function: cubic-bezier(0.64, 0.74, 0.31, 0.41);
+    transform: translate(0px, 0px) rotate(0deg) scale(1.02, 1.02);
+  }
+
+  46.00% {
+    animation-timing-function: cubic-bezier(0.6, 0.91, 0.23, 0.63);
+    transform: translate(0px, 0px) rotate(0deg) scale(1.03, 1.03);
+  }
+
+  50.00% {
+    transform: translate(0px, 0px) rotate(0deg) scale(1.03, 1.03);
+  }
+
+  54.00% {
+    transform: translate(0px, 0px) rotate(0deg) scale(1.03, 1.03);
+  }
+
+  58.00% {
+    animation-timing-function: cubic-bezier(0.69, 0.6, 0.35, 0.27);
+    transform: translate(0px, 0px) rotate(0deg) scale(1.03, 1.03);
+  }
+
+  64.00% {
+    transform: translate(0px, 0px) rotate(0deg) scale(1.01, 1.01);
+  }
+
+  68.00% {
+    transform: translate(0px, 0px) rotate(0deg) scale(1, 1);
+  }
+
+  72.00% {
+    animation-timing-function: cubic-bezier(0.67, 0.66, 0.34, 0.33);
+    transform: translate(0px, 0px) rotate(0deg) scale(0.98, 0.98);
+  }
+
+  76.00% {
+    animation-timing-function: cubic-bezier(0.66, 0.68, 0.33, 0.35);
+    transform: translate(0px, 0px) rotate(0deg) scale(0.97, 0.97);
+  }
+
+  82.00% {
+    animation-timing-function: cubic-bezier(0.65, 0.71, 0.32, 0.38);
+    transform: translate(0px, 0px) rotate(0deg) scale(0.94, 0.94);
+  }
+
+  88.00% {
+    animation-timing-function: cubic-bezier(0.65, 0.73, 0.31, 0.4);
+    transform: translate(0px, 0px) rotate(0deg) scale(0.92, 0.92);
+  }
+
+  94.00% {
+    animation-timing-function: cubic-bezier(0.63, 0.8, 0.28, 0.48);
+    transform: translate(0px, 0px) rotate(0deg) scale(0.91, 0.91);
+  }
+
+  100.00% {
+    animation-timing-function: cubic-bezier(0.63, 0.8, 0.28, 0.48);
+    transform: translate(0px, 0px) rotate(0deg) scale(0.91, 0.91);
+  }
+}

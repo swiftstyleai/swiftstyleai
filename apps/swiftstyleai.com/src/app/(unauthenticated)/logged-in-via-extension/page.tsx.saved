@@ -1,0 +1,20 @@
+'use client';
+
+import { createClient } from '@/lib/supabase/client';
+import { useEffect } from 'react';
+
+export default function LoggedInViaExtensionPage() {
+  const supabase = createClient();
+
+  async function getSession() {
+    const { data, error } = await supabase.auth.getSession();
+    const { session } = data;
+    console.log(session, error);
+  }
+
+  useEffect(() => {
+    getSession();
+  }, []);
+
+  return null;
+}
