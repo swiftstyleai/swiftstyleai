@@ -1,0 +1,8 @@
+sync:
+  defaults:
+    mode: two-way-resolved
+    ignore:
+      paths:
+        - node_modules
+        - .next
+        - .build

@@ -1,0 +1,3 @@
+{
+  "extends": "@llm-101/tsconfig/base.json"
+}
