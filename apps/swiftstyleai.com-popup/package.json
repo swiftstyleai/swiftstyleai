@@ -1,0 +1,49 @@
+{
+  "name": "swiftstyleai.com-popup",
+  "version": "0.2.0",
+  "description": "chrome extension popup",
+  "private": true,
+  "sideEffects": true,
+  "files": [
+    "dist/**"
+  ],
+  "scripts": {
+    "clean": "rimraf ./dist",
+    "build": "pnpm run clean && pnpm run type-check && vite build",
+    "build:watch": "cross-env __DEV__=true vite build -w --mode development",
+    "dev": "pnpm build:watch",
+    "lint": "eslint . --ext .ts,.tsx",
+    "lint:fix": "pnpm lint --fix",
+    "prettier": "prettier . --write --ignore-path ../../.prettierignore",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@llm-101/cookies": "workspace:*",
+    "@llm-101/ipc": "workspace:*",
+    "@llm-101/shared": "workspace:*",
+    "@llm-101/storage": "workspace:*",
+    "@radix-ui/react-slot": "^1.0.2",
+    "@radix-ui/react-switch": "^1.1.0",
+    "@radix-ui/react-tooltip": "^1.1.2",
+    "@supabase/supabase-js": "^2.43.2",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "cookie": "^0.6.0",
+    "debug": "^4.3.5",
+    "lucide-react": "^0.365.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.25.1",
+    "tailwind-merge": "^2.4.0",
+    "tailwindcss-animate": "^1.0.7"
+  },
+  "devDependencies": {
+    "@llm-101/hmr": "workspace:*",
+    "@llm-101/tailwindcss-config": "workspace:*",
+    "@llm-101/tsconfig": "workspace:*",
+    "@types/cookie": "^0.6.0",
+    "@types/debug": "^4.1.12",
+    "@types/react": "^18.2.45",
+    "@types/react-dom": "^18.3.0"
+  }
+}
