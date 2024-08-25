@@ -1,0 +1,8 @@
+// eslint-disable-next-line
+// @ts-ignore
+import tailwindcssOutput from '@/tailwind-output-root.css?inline';
+
+/** Inject styles into shadow dom */
+const styleElement = document.createElement('style');
+styleElement.innerHTML = tailwindcssOutput;
+document.body.append(styleElement);

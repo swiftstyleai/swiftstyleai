@@ -1,0 +1,199 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* https://developer.mozilla.org/en-US/docs/Web/CSS/:host */
+  :root,
+  :host {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    /* Primary colors for <Button /> */
+    /* --primary: 222.2 47.4% 11.2%; for background */
+    /* --primary-foreground: 210 40% 98%; for text*/
+    --primary: 82.7 78% 55.5%;
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  *,
+  :host {
+    @apply border-border;
+  }
+  /* body, div#app {
+    @apply bg-background text-foreground;
+  } */
+}
+
+@keyframes spin_animate {
+  0.00% {
+    animation-timing-function: cubic-bezier(0.51, 0.03, 0.89, 0.56);
+    transform: translate(0px, 0px) rotate(0deg) scale(1, 1) skew(0deg, 0deg);
+    opacity: 1;
+  }
+
+  52.00% {
+    animation-timing-function: cubic-bezier(0.17, 0.39, 0.55, 0.91);
+    transform: translate(0px, 0px) rotate(211.13deg);
+  }
+
+  100.00% {
+    animation-timing-function: cubic-bezier(0.17, 0.39, 0.55, 0.91);
+    transform: translate(0px, 0px) rotate(360deg);
+  }
+}
+
+@keyframes breath_animate {
+  0.00% {
+    transform: translate(0px, 0px) rotate(0deg) scale(0.91, 0.91)
+      skew(0deg, 0deg);
+    opacity: 1;
+  }
+
+  4.00% {
+    transform: translate(0px, 0px) rotate(0deg) scale(0.91, 0.91);
+  }
+
+  8.00% {
+    animation-timing-function: cubic-bezier(0.69, 0.6, 0.35, 0.27);
+    transform: translate(0px, 0px) rotate(0deg) scale(0.91, 0.91);
+  }
+
+  14.00% {
+    transform: translate(0px, 0px) rotate(0deg) scale(0.93, 0.93);
+  }
+
+  18.00% {
+    transform: translate(0px, 0px) rotate(0deg) scale(0.94, 0.94);
+  }
+
+  22.00% {
+    animation-timing-function: cubic-bezier(0.67, 0.66, 0.34, 0.33);
+    transform: translate(0px, 0px) rotate(0deg) scale(0.96, 0.96);
+  }
+
+  26.00% {
+    transform: translate(0px, 0px) rotate(0deg) scale(0.97, 0.97);
+  }
+
+  30.00% {
+    transform: translate(0px, 0px) rotate(0deg) scale(0.99, 0.99);
+  }
+
+  34.00% {
+    animation-timing-function: cubic-bezier(0.65, 0.71, 0.32, 0.38);
+    transform: translate(0px, 0px) rotate(0deg) scale(1.01, 1.01);
+  }
+
+  40.00% {
+    animation-timing-function: cubic-bezier(0.64, 0.74, 0.31, 0.41);
+    transform: translate(0px, 0px) rotate(0deg) scale(1.02, 1.02);
+  }
+
+  46.00% {
+    animation-timing-function: cubic-bezier(0.6, 0.91, 0.23, 0.63);
+    transform: translate(0px, 0px) rotate(0deg) scale(1.03, 1.03);
+  }
+
+  50.00% {
+    transform: translate(0px, 0px) rotate(0deg) scale(1.03, 1.03);
+  }
+
+  54.00% {
+    transform: translate(0px, 0px) rotate(0deg) scale(1.03, 1.03);
+  }
+
+  58.00% {
+    animation-timing-function: cubic-bezier(0.69, 0.6, 0.35, 0.27);
+    transform: translate(0px, 0px) rotate(0deg) scale(1.03, 1.03);
+  }
+
+  64.00% {
+    transform: translate(0px, 0px) rotate(0deg) scale(1.01, 1.01);
+  }
+
+  68.00% {
+    transform: translate(0px, 0px) rotate(0deg) scale(1, 1);
+  }
+
+  72.00% {
+    animation-timing-function: cubic-bezier(0.67, 0.66, 0.34, 0.33);
+    transform: translate(0px, 0px) rotate(0deg) scale(0.98, 0.98);
+  }
+
+  76.00% {
+    animation-timing-function: cubic-bezier(0.66, 0.68, 0.33, 0.35);
+    transform: translate(0px, 0px) rotate(0deg) scale(0.97, 0.97);
+  }
+
+  82.00% {
+    animation-timing-function: cubic-bezier(0.65, 0.71, 0.32, 0.38);
+    transform: translate(0px, 0px) rotate(0deg) scale(0.94, 0.94);
+  }
+
+  88.00% {
+    animation-timing-function: cubic-bezier(0.65, 0.73, 0.31, 0.4);
+    transform: translate(0px, 0px) rotate(0deg) scale(0.92, 0.92);
+  }
+
+  94.00% {
+    animation-timing-function: cubic-bezier(0.63, 0.8, 0.28, 0.48);
+    transform: translate(0px, 0px) rotate(0deg) scale(0.91, 0.91);
+  }
+
+  100.00% {
+    animation-timing-function: cubic-bezier(0.63, 0.8, 0.28, 0.48);
+    transform: translate(0px, 0px) rotate(0deg) scale(0.91, 0.91);
+  }
+}
