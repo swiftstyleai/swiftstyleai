@@ -1,0 +1,12 @@
+{
+  "extends": "@llm-101/tsconfig/base",
+  "compilerOptions": {
+    "module": "es2022",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "types": ["chrome"]
+  },
+  "include": ["src"]
+}

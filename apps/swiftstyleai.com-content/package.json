@@ -1,0 +1,33 @@
+{
+  "name": "swiftstyleai.com-content",
+  "version": "0.2.0",
+  "description": "chrome extension content script",
+  "private": true,
+  "sideEffects": true,
+  "files": [
+    "dist/**"
+  ],
+  "scripts": {
+    "clean": "rimraf ./dist",
+    "build": "pnpm run clean && vite build",
+    "build:watch": "cross-env __DEV__=true vite build -w --mode development",
+    "dev": "pnpm build:watch",
+    "lint": "eslint . --ext .ts,.tsx",
+    "lint:fix": "pnpm lint --fix",
+    "prettier": "prettier . --write --ignore-path ../../.prettierignore",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@llm-101/ipc": "workspace:*",
+    "@llm-101/shared": "workspace:*",
+    "@llm-101/storage": "workspace:*",
+    "@supabase/ssr": "^0.3.0",
+    "@supabase/supabase-js": "^2.44.4",
+    "debug": "^4.3.5"
+  },
+  "devDependencies": {
+    "@llm-101/hmr": "workspace:*",
+    "@llm-101/tsconfig": "workspace:*",
+    "@types/debug": "^4.1.12"
+  }
+}
