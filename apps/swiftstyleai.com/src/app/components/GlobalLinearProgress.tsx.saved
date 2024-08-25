@@ -1,0 +1,16 @@
+'use client';
+
+import React from 'react';
+
+import LinearProgress from '@/components/ui/LinearProgress';
+
+import { useAppContext } from '@/contexts/app';
+
+function GlobalLinearProgress() {
+  const { state: stateApp } = useAppContext();
+  return (<>
+    {stateApp.isNavigating ? <LinearProgress className="fixed top-0 z-10" /> : null}
+  </>);
+}
+
+export default GlobalLinearProgress;

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <h1 style="margin-left: 0px; margin-right: 0px; margin-top: 1.75rem; margin-bottom: 1.75rem; padding: 0px; text-align: center; font-size: 1.25rem; line-height: 1.75rem; font-weight: 600; color: rgb(0, 0, 0);">
+    Your Login Link
+  </h1>
+  <p style="font-size: 0.875rem; line-height: 1.5rem; margin: 16px 0; color: rgb(0, 0, 0);">
+    Welcome to SwiftStyle AI!
+  </p>
+  <p style="font-size: 0.875rem; line-height: 1.5rem; margin: 16px 0; color: rgb(0, 0, 0);">
+    Please click the magic link below to sign in to your account.
+  </p>
+  <table align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation"
+    style="margin-top: 2rem; margin-bottom: 2rem; text-align: center">
+    <tbody>
+      <tr>
+        <td>
+          <a style="text-decoration: none; border-radius: 9999px; color: rgb(0, 0, 0); background-color: rgb(163 230 53); padding-left: 1.5rem; padding-right: 1.5rem; padding-top: 0.75rem; padding-bottom: 0.75rem; text-align: center; font-size: 12px; font-weight: 600; text-decoration-line: none;" href="{{ .SiteURL }}/api/v1/auth/confirm?token_hash={{ .TokenHash }}&type=magiclink&next={{ .RedirectTo }}" target="_blank">
+            Sign in
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p style="font-size: 0.875rem; line-height: 1.5rem; margin: 16px 0; color: rgb(0, 0, 0);">
+    or copy and paste this URL into your browser:
+  </p>
+  <p style="font-size: 14px; line-height: 24px; margin: 16px 0; max-width: 24rem; font-weight: 500; color: rgb(147, 51, 234); text-decoration-line: none;">
+    <a href="{{ .SiteURL }}/api/v1/auth/confirm?token_hash={{ .TokenHash }}&type=magiclink&next={{ .SiteURL }}/dashboard"
+      target="_blank">
+      {{ .SiteURL }}/api/v1/auth/confirm?token_hash={{ .TokenHash
+      }}&type=magiclink&next={{ .RedirectTo }}
+    </a>
+  </p>
+</body>
+
+</html>
