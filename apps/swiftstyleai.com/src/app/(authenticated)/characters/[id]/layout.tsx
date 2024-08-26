@@ -18,9 +18,7 @@ export default function CharactersIDLayout({
 }: CharactersIDLayoutProps): JSX.Element {
   return (
     <DeletingCharacterDialogProvider>
-      <CharactersIDProvider characterId={id}>
-        {children}
-      </CharactersIDProvider>
+      <CharactersIDProvider characterId={id}>{children}</CharactersIDProvider>
     </DeletingCharacterDialogProvider>
   );
 }

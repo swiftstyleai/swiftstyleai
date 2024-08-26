@@ -1,0 +1,8 @@
+{
+  "extends": "@llm-101/tsconfig/utils",
+  "compilerOptions": {
+    "outDir": "dist"
+  },
+  "exclude": ["lib/injections/**/*"],
+  "include": ["lib", "index.ts"]
+}

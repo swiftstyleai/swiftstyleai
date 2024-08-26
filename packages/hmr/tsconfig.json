@@ -1,0 +1,7 @@
+{
+  "extends": "@llm-101/tsconfig/utils",
+  "compilerOptions": {
+    "outDir": "dist"
+  },
+  "include": ["lib", "index.ts", "rollup.config.mjs"]
+}

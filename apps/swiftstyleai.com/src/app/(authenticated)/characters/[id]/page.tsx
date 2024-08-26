@@ -16,11 +16,15 @@ import {
   BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb';
 import { Skeleton } from '@/components/ui/skeleton';
-import Header from '../../components/Header';
+
 import { withPrivateRoute } from '@/contexts/auth/withPrivateRoute';
 
+import Header from '../../components/Header';
+
 const Page = () => {
-  const { state: { character, fetchStatus } } = useCharactersIDContext();
+  const {
+    state: { character, fetchStatus },
+  } = useCharactersIDContext();
 
   const headerTitle = useMemo(() => {
     if (fetchStatus === HttpStatus.LOADED) {
